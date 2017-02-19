@@ -1,0 +1,13 @@
+﻿.registration-container {
+    width: 350px;
+    border-top: 3px solid #0094ff;
+    margin: auto;
+    margin-top: 50px;
+    background: #fff;
+}
+.registration-container form{
+    padding: 20px;
+}
+    .registration-container .form-control, .registration-container .btn {
+        border-radius: 0;
+    }

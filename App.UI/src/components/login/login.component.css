@@ -1,0 +1,18 @@
+﻿.login-container {
+    width: 350px;
+    border-top: 3px solid #0094ff;
+    margin: auto;
+    margin-top: 50px;
+    background: #fff;
+}
+.login-container form{
+    padding: 20px;
+}
+    .login-container .form-control, .login-container .btn {
+        border-radius: 0;
+    }
+    .login-container .forgot-password {
+        background: #e2e2e2;
+        text-align: center;
+        padding: 10px;
+    }

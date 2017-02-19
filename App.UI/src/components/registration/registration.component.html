@@ -1,0 +1,29 @@
+﻿<h2 class="text-center">Create account</h2>
+<div class="registration-container">
+    <form id="loginForm" autocomplete="off">
+        <div class="form-group">
+            <label for="registerFirstName">First Name</label>
+            <input type="text" class="form-control" id="registerFirstName" value="{{user.firstname}}" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+            <label for="registerLastName">Last Name</label>
+            <input type="text" class="form-control" id="registerLastName" value="{{user.lastname}}" placeholder="Last Name" required>
+        </div>
+        <div class="form-group">
+            <label for="registerEmail">Email address</label>
+            <input type="email" class="form-control" id="registerEmail" value="{{user.email}}" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input type="password" class="form-control" id="registerPassword" value="{{user.passwrod}}" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+            <label for="registerConfirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="registerConfirmPassword" value="{{user.confirmPasswrod}}" placeholder="Confirm Password" required>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-success">Register</button>            
+            <button type="reset" class="btn btn-default">Clear</button>  
+        </div>
+    </form>
+</div>

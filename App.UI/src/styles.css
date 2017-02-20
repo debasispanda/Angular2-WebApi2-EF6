@@ -1,3 +1,9 @@
 ﻿body {
     background: #f0f0f0;
 }
+.page-navigation {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-size: 20px;
+}

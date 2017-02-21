@@ -1,7 +1,7 @@
 ﻿<h1 class="text-center">Hey, Welcome !</h1>
 <h4 class="text-center">Log in to your account</h4>
 <div class="login-container">
-    <form id="loginForm" autocomplete="off">
+    <form id="loginForm" autocomplete="off" (ngSubmit)="login()" #loginForm="ngForm">
         <div class="form-group">
             <label for="loginEmail">Email address</label>
             <input type="email" class="form-control" id="loginEmail" value="{{user.email}}" placeholder="Email" required>

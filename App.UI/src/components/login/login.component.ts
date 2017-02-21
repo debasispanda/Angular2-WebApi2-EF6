@@ -1,4 +1,5 @@
 ﻿import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
     moduleId: module.id,
@@ -8,9 +9,12 @@
 })
 export class LoginComponent {
     public user: any = {};
-    constructor() {
+    constructor(private router: Router) {
         this.user.name = '';
         this.user.password = '';
     }
-    
+
+    public login(): void {
+        this.router.navigate(['/dashboard']);
+    }
 }

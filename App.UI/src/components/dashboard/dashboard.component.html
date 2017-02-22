@@ -1,12 +1,25 @@
-﻿<span class="page-navigation">
-    <a class="glyphicon glyphicon-home" href="#/login"></a>
-</span>
-<span class="add-notes-button">
-    <span class="glyphicon glyphicon-plus" title="Add Notes"></span>
+﻿<span class="sign-out-button">
+    <a class="glyphicon glyphicon-off" href="#/login" title="Sign Out"></a>
 </span>
 <h2 class="text-center">Dashboard</h2>
 <div class="dashboard-container">
     <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="add-notes-container">
+                    <form id="addNotesForm" autocomplete="off">
+                        <div class="">
+                            <input type="text" class="form-control" id="addNotesTitle" placeholder="Title" required>
+                            <textarea class="form-control" placeholder="Add Note"></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-default btn-add-notes">Done</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
                 <div class="note-tile">

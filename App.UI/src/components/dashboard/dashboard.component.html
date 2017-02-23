@@ -9,10 +9,10 @@
                 <div class="add-notes-container">
                     <form id="addNotesForm" autocomplete="off">
                         <div class="">
-                            <input type="text" class="form-control" id="addNotesTitle" placeholder="Title" required>
-                            <textarea class="form-control" placeholder="Add Note"></textarea>
+                            <input [class.hidden]="!addNoteActive" type="text" class="form-control" (blur)="hideAddForm($event)" id="addNotesTitle" placeholder="Title" required>
+                            <textarea [class.inactive]="!addNoteActive" (click)="showAddForm()" (blur)="hideAddForm($event)" class="form-control" placeholder="Add Note"></textarea>
                         </div>
-                        <div class="text-right">
+                        <div class="text-right" [class.hidden]="!addNoteActive">
                             <button type="submit" class="btn btn-default btn-add-notes">Done</button>
 
                         </div>

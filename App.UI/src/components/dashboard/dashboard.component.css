@@ -28,6 +28,14 @@
     -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.20);
     box-shadow: 0 3px 5px rgba(0,0,0,0.20);
 }
+.add-notes-container textarea {
+    resize: none;
+}
+.add-notes-container textarea.inactive {
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .btn-add-notes {
     border: 0;
     background: none;

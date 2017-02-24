@@ -21,78 +21,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
+            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container" *ngFor="let note of notes">
                 <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
+                    <label>{{note.title}}</label>
+                    <p>{{note.description}}</p>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container">
-                <div class="note-tile">
-                    <label>Note title</label>
-                    <p>This is note description. This is note description.</p>
-                </div>
-            </div>
+            </div>            
         </div>
     </div>
 </div>

@@ -80,6 +80,7 @@
     <Content Include="src\components\registration\registration.component.css" />
     <Content Include="src\components\registration\registration.component.html" />
     <Content Include="src\tsconfig.json" />
+    <Content Include="src\data\notes-data.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,6 +111,7 @@
     <TypeScriptCompile Include="src\components\registration\registration.component.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app.routes.ts" />
+    <TypeScriptCompile Include="src\service\notes.service.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

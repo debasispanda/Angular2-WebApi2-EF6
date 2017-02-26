@@ -109,8 +109,10 @@
     <TypeScriptCompile Include="src\components\forgot-password\forgot-password.component.ts" />
     <TypeScriptCompile Include="src\components\login\login.component.ts" />
     <TypeScriptCompile Include="src\components\registration\registration.component.ts" />
+    <TypeScriptCompile Include="src\data\mock-colors.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app.routes.ts" />
+    <TypeScriptCompile Include="src\service\color.service.ts" />
     <TypeScriptCompile Include="src\service\notes.service.ts" />
   </ItemGroup>
   <ItemGroup>

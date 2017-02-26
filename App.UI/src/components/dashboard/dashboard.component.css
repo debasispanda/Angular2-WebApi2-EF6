@@ -7,7 +7,13 @@
 .note-tile-container .note-tile {
     background: #fff;
     padding: 5px;
+    padding-bottom: 20px;
     border: 1px solid #ccc;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+.note-tile-container .note-tile.editing {
+    opacity: 0;
 }
 .sign-out-button {
     position: absolute;
@@ -16,11 +22,13 @@
     font-size: 20px;
     cursor: pointer;
 }
-#addNotesForm .form-control {
+.add-notes-container .form-control, .edit-notes-container .form-control {
     border: none;
     border-radius: 0;
     outline: 0;
     box-shadow: none;
+    background: none;
+    color: #000;
 }
 .add-notes-container {
     background: #fff;
@@ -28,7 +36,7 @@
     -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.20);
     box-shadow: 0 3px 5px rgba(0,0,0,0.20);
 }
-.add-notes-container textarea {
+.add-notes-container textarea, .edit-notes-container textarea {
     resize: none;
 }
 .add-notes-container textarea.inactive {
@@ -36,7 +44,51 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.btn-add-notes {
+.btn-add-notes, .btn-edit-notes  {
     border: 0;
     background: none;
 }
+.modal-content{
+    border-radius: 0;    
+}
+.edit-note-modal .modal-body{
+    padding: 0;   
+}
+.note-footer {
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.note-tile-container:hover .note-footer {
+    opacity:1;
+}
+.note-footer .glyphicon {
+    padding: 4px;
+}
+.color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 3px;
+    cursor: pointer;
+}
+.color-palletes {
+    position: absolute;
+    left: 0;
+    top: -62px;
+    background: #fff;
+    width: 115px;
+    display: none;
+    padding: 4px;
+}
+.btn-theme:hover .color-palletes {
+    display: inline-block;
+}
+    .color.white-color {
+        border: 2px solid #ccc;
+    }

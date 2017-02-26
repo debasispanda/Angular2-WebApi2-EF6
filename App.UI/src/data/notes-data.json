@@ -5,133 +5,152 @@
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#80d8ff"
     },
     {
       "id": "2",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#ff8a80"
     },
     {
       "id": "3",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background": "#ffd180"
     },
     {
       "id": "4",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background": "#ffff8d"
     },
     {
       "id": "5",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#cfd8dc"
     },
     {
       "id": "6",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#a7ffeb"
     },
     {
       "id": "7",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "8",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#ccff90"
     },
     {
       "id": "9",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "10",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "11",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "12",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "13",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "14",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "15",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "16",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "17",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "18",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     },
     {
       "id": "19",
       "title": "Note title",
       "description": "This is note description. This is note description.",
       "type": "note",
-      "updated": "1487873739070"
+      "updated": "1487873739070",
+      "background":  "#fff"
     }
   ]
 }

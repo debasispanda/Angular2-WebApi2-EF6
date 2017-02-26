@@ -9,11 +9,12 @@ import { ForgotPasswordComponent }      from './components/forgot-password/forgo
 import { DashboardComponent }      from './components/dashboard/dashboard.component';
 import { AppRoutingModule }     from './app.routes';
 import {NotesService} from './service/notes.service';
+import {ColorService} from './service/color.service';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, AppRoutingModule, HttpModule],
     declarations: [AppComponent, LoginComponent, RegistrationComponent, ForgotPasswordComponent, DashboardComponent],
-    providers: [NotesService],
+    providers: [NotesService, ColorService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

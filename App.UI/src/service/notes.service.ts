@@ -28,4 +28,5 @@ export class Note {
     description: string;
     type: string;
     updated: number;
+    background: string;
 }

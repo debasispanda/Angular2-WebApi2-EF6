@@ -4,11 +4,11 @@
     <form id="loginForm" autocomplete="off" (ngSubmit)="login()" #loginForm="ngForm">
         <div class="form-group">
             <label for="loginEmail">Email address</label>
-            <input type="email" class="form-control" id="loginEmail" value="{{user.email}}" placeholder="Email" required>
+            <input type="email" class="form-control" id="loginEmail" name="loginUsername" [(ngModel)]="user.username" placeholder="Email" required>
         </div>
         <div class="form-group">
             <label for="loginPassword">Password</label>
-            <input type="password" class="form-control" id="loginPassword" value="{{user.passwrod}}" placeholder="Password" required>
+            <input type="password" class="form-control" id="loginPassword" name="loginPassword" [(ngModel)]="user.password"  placeholder="Password" required>
         </div>
         <div class="form-group">
             <div class="checkbox">

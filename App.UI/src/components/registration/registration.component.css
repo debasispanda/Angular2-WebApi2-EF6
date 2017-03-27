@@ -11,3 +11,6 @@
     .registration-container .form-control, .registration-container .btn {
         border-radius: 0;
     }
+.modal-footer {
+    text-align: center;
+}

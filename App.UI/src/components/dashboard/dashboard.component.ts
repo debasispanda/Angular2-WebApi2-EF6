@@ -1,7 +1,9 @@
 ﻿import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 import {Note, NotesService} from '../../service/notes.service';
 import { Color } from '../../data/mock-colors';
 import {ColorService} from '../../service/color.service';
+import {UserInfoService, UserInfo} from '../../service/userinfo.service';
 declare var jQuery: any, $: any;
 @Component({
     moduleId: module.id,
@@ -15,6 +17,11 @@ export class DashboardComponent {
     private deleteIndex: number;
     private editId: number;
     private colors: Color[] = [];
+    private User: UserInfo = {
+        FirstName: '',
+        LastName: '',
+        Email: ''
+    };
     private editedNote: Note = {
         id: null,
         title: "",
@@ -33,9 +40,15 @@ export class DashboardComponent {
     };
     constructor(
         private notesService: NotesService,
-        private colorService: ColorService) {
-        this.getNotes();
-        this.getColor();
+        private colorService: ColorService,
+        private userInfoService: UserInfoService,
+        private router: Router) {
+        if (this.isLoggedIn()) {
+            this.getNotes();
+            this.getColor();
+            this.getUserInfo();
+        }
+        else this.router.navigate(['/login']);
     }
 
     private showAddForm(): void {
@@ -101,5 +114,24 @@ export class DashboardComponent {
                 note.background = color.color;
             }
         });
+    }
+
+    private logout(): void {
+        if (localStorage.getItem('accessToken')) {
+            localStorage.removeItem('accessToken');
+            this.router.navigate(['/login']);
+        }
+    }
+
+    private getUserInfo(): void {
+        this.userInfoService.getUserInfo().then(info => {
+            this.User = info;
+        }, error => console.log(error));
+    }
+
+    private isLoggedIn(): boolean {
+        if (localStorage.getItem('accessToken'))
+            return true;
+        else return false;
     }
 }

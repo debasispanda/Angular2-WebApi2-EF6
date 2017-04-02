@@ -1,6 +1,6 @@
 ﻿import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {Note, NotesService} from '../../service/notes.service';
+import {Note, NewNote, NotesService} from '../../service/notes.service';
 import { Color } from '../../data/mock-colors';
 import {ColorService} from '../../service/color.service';
 import {UserInfoService, UserInfo} from '../../service/userinfo.service';
@@ -23,21 +23,14 @@ export class DashboardComponent {
         Email: ''
     };
     private editedNote: Note = {
-        id: null,
-        title: "",
-        description: "",
-        type: "",
-        updated: null,
-        background: '#fff'
+        Id: null,
+        Title: "",
+        Description: "",
+        Type: "note",
+        Updated: null,
+        Background: '#fff'
     };
-    private newNote: Note = {
-        id: null,
-        title: "",
-        description: "",
-        type: "",
-        updated: null,
-        background: '#fff'
-    };
+    private newNote: NewNote = this.resetNote();
     constructor(
         private notesService: NotesService,
         private colorService: ColorService,
@@ -61,18 +54,18 @@ export class DashboardComponent {
     private getNotes(): void {
         this.notesService.getNotes().then(notes => {
             this.notes = notes;
-        });
+        }, error => console.error('Fetching notes failed!'));
     }
     private getColor(): void {
         this.colorService.getColors().then(colors => {
             this.colors = colors;
-        });
+        }, error => console.error('Fetching colors failed!'));
     }
     private editNote(note: Note): void {
         let self = this;
         this.editedNote = note;
         $('#edit-note-modal').off('show.bs.modal').on('show.bs.modal', function () {
-            self.editId = note.id;   
+            self.editId = note.Id;   
         });
         $('#edit-note-modal').off('hidden.bs.modal').on('hidden.bs.modal', function () {
             self.editId = null;
@@ -82,24 +75,16 @@ export class DashboardComponent {
     private saveNote(): void {
         $('#edit-note-modal').modal('hide');        
     }
-    private insertNote(): void {
-        this.newNote.id = this.notes[this.notes.length - 1].id + 1;
-        this.newNote.type = 'note';
-        this.newNote.updated = Date.now();
-        this.notes.push(this.newNote);
-        this.newNote = {
-            id: null,
-            title: "",
-            description: "",
-            type: "",
-            updated: null,
-            background: '#fff'
-        };
+    private insertNote(newNote: NewNote): void {
+        this.notesService.postNote(newNote).then(note => {
+            this.notes.push(note);
+            this.resetNote();
+        }, error => { console.log('Failed to insert note'); });
     }
     private deleteNote(id: number): void {
         let self = this;
         this.notes.map(function (note, index) {
-            if(id === note.id)
+            if(id === note.Id)
                 self.deleteIndex = index;
         });
         jQuery('#delete-note-modal').modal('show');
@@ -110,8 +95,8 @@ export class DashboardComponent {
     }
     private setTheme(note: Note, color: Color): void {
         this.notes.map(function (noteObj, index) {
-            if (note.id === noteObj.id) {
-                note.background = color.color;
+            if (note.Id === noteObj.Id) {
+                note.Background = color.color;
             }
         });
     }
@@ -133,5 +118,16 @@ export class DashboardComponent {
         if (localStorage.getItem('accessToken'))
             return true;
         else return false;
+    }
+
+    private resetNote(): NewNote {
+        this.newNote = {
+            Title: "",
+            Description: "",
+            Type: "note",
+            Background: '#fff'
+        };
+
+        return this.newNote;
     }
 }

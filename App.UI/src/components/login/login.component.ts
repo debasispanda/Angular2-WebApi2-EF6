@@ -13,7 +13,11 @@ export class LoginComponent {
         password: '',
         grant_type: 'password'
     };
-    constructor(private router: Router, private authService: AuthenticationService) { }
+    constructor(private router: Router, private authService: AuthenticationService) {
+        if (this.isLoggedIn()) {
+            this.router.navigate(['/dashboard']);
+        }
+    }
 
     public login(): void {
         this.authService.authenticate(this.user).then(authData => {
@@ -25,5 +29,11 @@ export class LoginComponent {
         }, error => {
             console.error('Invalid username or password');
         });
+    }
+
+    private isLoggedIn(): boolean {
+        if (localStorage.getItem('accessToken'))
+            return true;
+        else return false;
     }
 }

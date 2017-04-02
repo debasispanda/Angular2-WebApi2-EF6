@@ -8,10 +8,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="add-notes-container">
-                    <form id="addNotesForm" autocomplete="off" (submit)="insertNote()">
+                    <form id="addNotesForm" autocomplete="off" (submit)="insertNote(newNote)">
                         <div class="">
-                            <input [class.hidden]="!addNoteActive" type="text" name="title" [(ngModel)]="newNote.title" class="form-control" (blur)="hideAddForm($event)" id="addNotesTitle" placeholder="Title" required>
-                            <textarea [class.inactive]="!addNoteActive" name="description" [(ngModel)]="newNote.description" (click)="showAddForm()" (blur)="hideAddForm($event)" class="form-control" placeholder="Add Note"></textarea>
+                            <input [class.hidden]="!addNoteActive" type="text" name="title" [(ngModel)]="newNote.Title" class="form-control" (blur)="hideAddForm($event)" id="addNotesTitle" placeholder="Title" required>
+                            <textarea [class.inactive]="!addNoteActive" name="description" [(ngModel)]="newNote.Description" (click)="showAddForm()" (blur)="hideAddForm($event)" class="form-control" placeholder="Add Note"></textarea>
                         </div>
                         <div class="text-right" [class.hidden]="!addNoteActive">
                             <button type="submit" class="btn btn-default btn-add-notes">Done</button>
@@ -22,9 +22,9 @@
         </div>
         <div class="row">
             <div class="col-md-3 col-sm-4 col-xs-6 note-tile-container" *ngFor="let note of notes;">
-                <div class="note-tile" (click)="editNote(note)" [style.opacity]="editId === note.id ? 0 : 1" [style.background]="note.background">
-                    <label>{{note.title}}</label>
-                    <p>{{note.description}}</p>
+                <div class="note-tile" (click)="editNote(note)" [style.opacity]="editId === note.Id ? 0 : 1" [style.background]="note.Background">
+                    <label>{{note.Title}}</label>
+                    <p>{{note.Description}}</p>
                 </div>
                 <div class="note-footer">
                     <span class="glyphicon glyphicon-adjust btn-theme" title="Theme">
@@ -32,7 +32,7 @@
                             <span class="color {{color.className}}" *ngFor="let color of colors" [style.background]="color.color" (click)="setTheme(note, color)"></span>
                         </span>
                     </span>
-                    <span class="glyphicon glyphicon-trash" (click)="deleteNote(note.id)" title="Delete"></span>                   
+                    <span class="glyphicon glyphicon-trash" (click)="deleteNote(note.Id)" title="Delete"></span>                   
                 </div>
             </div>            
         </div>
@@ -41,13 +41,13 @@
 <!-- Edit Modal -->
 <div class="modal fade edit-note-modal" id="edit-note-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
-        <div class="modal-content" [style.background]="editedNote.background">
+        <div class="modal-content" [style.background]="editedNote.Background">
             <div class="modal-body">
                 <div class="edit-notes-container">
                     <form id="editNotesForm" autocomplete="off" (submit)="saveNote()">
                         <div class="">
-                            <input type="text" class="form-control" id="editNotesTitle" name="title" [(ngModel)]="editedNote.title" placeholder="Title" required>
-                            <textarea class="form-control" placeholder="Add Note" name="description" [(ngModel)]="editedNote.description"></textarea>
+                            <input type="text" class="form-control" id="editNotesTitle" name="title" [(ngModel)]="editedNote.Title" placeholder="Title" required>
+                            <textarea class="form-control" placeholder="Add Note" name="description" [(ngModel)]="editedNote.Description"></textarea>
                         </div>
                         <div class="text-right">
                             <button type="submit" class="btn btn-default btn-edit-notes">Done</button>

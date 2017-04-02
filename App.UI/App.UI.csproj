@@ -79,6 +79,10 @@
     <Content Include="src\components\login\login.component.html" />
     <Content Include="src\components\registration\registration.component.css" />
     <Content Include="src\components\registration\registration.component.html" />
+    <Content Include="src\images\asp-net-angular2-300x176.jpg" />
+    <Content Include="src\images\note_app.PNG" />
+    <Content Include="src\images\note_app_login.PNG" />
+    <Content Include="src\images\note_app_register.PNG" />
     <Content Include="src\tsconfig.json" />
     <Content Include="src\data\notes-data.json" />
     <None Include="Web.Debug.config">

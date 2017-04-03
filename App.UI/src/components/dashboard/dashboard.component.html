@@ -29,7 +29,7 @@
                 <div class="note-footer">
                     <span class="glyphicon glyphicon-adjust btn-theme" title="Theme">
                         <span class="color-palletes">
-                            <span class="color {{color.className}}" *ngFor="let color of colors" [style.background]="color.color" (click)="setTheme(note, color)"></span>
+                            <span class="color {{color.className}}" *ngFor="let color of colors" [style.background]="color.color" (click)="setTheme(note.Id, note, color)"></span>
                         </span>
                     </span>
                     <span class="glyphicon glyphicon-trash" (click)="deleteNote(note.Id)" title="Delete"></span>                   

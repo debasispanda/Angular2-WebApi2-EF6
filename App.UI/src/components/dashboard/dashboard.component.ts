@@ -14,7 +14,7 @@ declare var jQuery: any, $: any;
 export class DashboardComponent {
     private addNoteActive: boolean = false;
     private notes: Note[] = [];
-    private deleteIndex: number;
+    private deleteId: number;
     private editId: number;
     private colors: Color[] = [];
     private User: UserInfo = {
@@ -56,11 +56,13 @@ export class DashboardComponent {
             this.notes = notes;
         }, error => console.error('Fetching notes failed!'));
     }
+
     private getColor(): void {
         this.colorService.getColors().then(colors => {
             this.colors = colors;
         }, error => console.error('Fetching colors failed!'));
     }
+
     private editNote(note: Note): void {
         let self = this;
         this.editedNote = note;
@@ -72,33 +74,67 @@ export class DashboardComponent {
         });
         jQuery('#edit-note-modal').modal('show');
     }
+
     private saveNote(): void {
-        $('#edit-note-modal').modal('hide');        
+        var self = this;
+        this.notesService.putNote(this.editId, this.editedNote).then(
+            res => {
+                console.log(res);
+                this.notes.map(function (note: Note, index: number) {
+                    if (note.Id === self.editedNote.Id)
+                        self.notes[index] = self.editedNote;
+                });
+                $('#edit-note-modal').modal('hide');
+            },
+            err => {
+                console.log(err);
+                $('#edit-note-modal').modal('hide');
+            });                
     }
+
     private insertNote(newNote: NewNote): void {
         this.notesService.postNote(newNote).then(note => {
-            this.notes.push(note);
+            //this.notes.push(note);
             this.resetNote();
+            this.getNotes();
         }, error => { console.log('Failed to insert note'); });
     }
+
     private deleteNote(id: number): void {
-        let self = this;
-        this.notes.map(function (note, index) {
-            if(id === note.Id)
-                self.deleteIndex = index;
-        });
+        this.deleteId = id;
         jQuery('#delete-note-modal').modal('show');
     }
+
     private confirmDelete(): void {
-        this.notes.splice(this.deleteIndex, 1);
-        jQuery('#delete-note-modal').modal('hide');
-    }
-    private setTheme(note: Note, color: Color): void {
-        this.notes.map(function (noteObj, index) {
-            if (note.Id === noteObj.Id) {
-                note.Background = color.color;
-            }
+        let noteIndex: number, self = this;
+        this.notes.map(function (note, index) {
+            if (self.deleteId === note.Id)
+                noteIndex = index;
         });
+        this.notesService.deleteNote(this.deleteId).then(
+            res => {
+                console.log(res);
+                jQuery('#delete-note-modal').modal('hide');
+                this.notes.splice(noteIndex, 1);
+            },
+            err => {
+                console.error(err);
+                jQuery('#delete-note-modal').modal('hide');
+            }
+        );
+    }
+
+    private setTheme(id: number, note: Note, color: Color): void {
+        let updatedNote: Note = note;
+        updatedNote.Background = color.color;
+        this.notesService.putNote(id, updatedNote).then(
+            res => {
+                console.log(res);
+                note.Background = color.color;
+            },
+            err => {
+                console.log(err);
+            }); 
     }
 
     private logout(): void {
